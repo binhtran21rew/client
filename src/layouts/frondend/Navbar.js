@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 function Navbar(){
+    var AuthButton = ''
+    if(!localStorage.getItem('auth_token'))
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
         <div className="container">
@@ -18,7 +20,10 @@ function Navbar(){
                 </li>   
                 <li className="nav-item">
                     <Link className="nav-link" to="/register">Register</Link>
-                </li>                
+                </li>     
+                <li className="nav-item">
+                    <button type="button"className="nav-link btn btn-danger btn-sm text-white" to="/register">Logout</button>
+                </li>              
             </ul>
            
             </div>

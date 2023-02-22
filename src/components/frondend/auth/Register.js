@@ -62,7 +62,7 @@ function Register(){
                                     </div> 
                                     <div className='form-group mb-3'>
                                         <label>Password</label>
-                                        <input type="" name="password" onChange={handleInput} value={registerInput.password} className="form-control"/>
+                                        <input type="password" name="password" onChange={handleInput} value={registerInput.password} className="form-control"/>
                                         <span>{registerInput.err_list.password}</span>
                                     </div>   
                                     <div className='form-group mb-3'>
