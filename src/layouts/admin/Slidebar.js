@@ -7,9 +7,13 @@ const Slidebar = () => {
             <div className="sb-sidenav-menu">
                 <div className="nav">
                     <div className="sb-sidenav-menu-heading">Core</div>
-                    <Link className="nav-link" to="index.html">
+                    <Link to="/admin/dashboard" className="nav-link" >
                         <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                         Dashboard
+                    </Link>
+                    <Link  to="/admin/profile" className="nav-link" >
+                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        Profile
                     </Link>
                     <div className="sb-sidenav-menu-heading">Interface</div>
                     <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

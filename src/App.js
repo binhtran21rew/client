@@ -1,14 +1,16 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import MasterLayout from './layouts/admin/MasterLayout';
+import Home from './components/frondend/Home'
 
 function App() {
   return (
     <div className="App">
         <Router>
-            <Routes>
-                <Route path="/admin/dashboard" element={<MasterLayout/>} />
-            </Routes>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/admin" name="Admin"  render={(props) => <MasterLayout {...props}/>} />
+            </Switch>
         </Router>
     </div>
   );
