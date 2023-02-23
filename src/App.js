@@ -6,6 +6,11 @@ import Login  from './components/frondend/auth/Login';
 import Register from './components/frondend/auth/Register';
 import axios from 'axios';
 
+import AdminPrivateRoute from './AdminPrivateRoute'
+import Page403 from './components/errors/Page403';
+import Page404 from './components/errors/Page404';
+
+
 axios.defaults.baseURL = "http://localhost:8000/"
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.headers.post['Accept'] = '*/*'
@@ -23,6 +28,9 @@ function App() {
         <Router>
             <Switch>
                 <Route exact path="/" component={Home}/>
+                <Route exact path="/403" component={Page403}/>
+                <Route exact path="/404" component={Page404}/>
+
                 <Route path='/login'>
                   {localStorage.getItem('auth_token') ? <Redirect to='/'/> : <Login/>}
                 </Route>
@@ -30,7 +38,8 @@ function App() {
                   {localStorage.getItem('auth_token') ? <Redirect to='/'/> : <Register/>}
                 </Route>
 
-                <Route path="/admin" name="Admin"  render={(props) => <MasterLayout {...props}/>} />
+                {/* <Route path="/admin" name="Admin"  render={(props) => <MasterLayout {...props}/>} /> */}
+                <AdminPrivateRoute path="/admin" name="Admin"/>
             </Switch>
         </Router>
     </div>
