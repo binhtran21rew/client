@@ -6,6 +6,8 @@ import slug from '../../../utils/CreateSlug'
 import { Link, useHistory } from "react-router-dom";
 
 function AddCategory(){
+    document.title = "Add Categories"
+
     const history = useHistory()
     const [CategoryInput, setCategoryInput] = useState({
         'name': '',
@@ -24,7 +26,7 @@ function AddCategory(){
             slug: slug(CategoryInput.name),
             status: CategoryInput.status
         }
-        axios.post('/api/addCategory', data)
+        axios.post('/api/add_Category', data)
             .then(res => {
                 if(res.data.status === 200){
                     swal('Success', res.data.message, 'success')
@@ -42,8 +44,8 @@ function AddCategory(){
             CategoryInput.errors.slug,
         ]
     }
-    
     return (
+        
         <div className="container-fluid px-4">
             <div className="card mt-4">
                 <div className="card-header">

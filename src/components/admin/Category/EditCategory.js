@@ -10,13 +10,13 @@ function EditCategory(props) {
     const [error, setError] = useState([])
     useEffect(() => {
         const idCate = props.match.params.id;
-        axios.get(`/api/edit-category/${idCate}`)
+        axios.get(`/api/edit_category/${idCate}`)
             .then(res => {
                 if(res.data.status === 200) {
                     setEditCategory(res.data.category)
                 }else if(res.data.status === 404) {
                     swal("Error", res.data.message, "error")
-                    history.push('/')
+                    history.push('/admin/categories')
                 }
                 setLoading(false)
             })
@@ -30,7 +30,7 @@ function EditCategory(props) {
         e.preventDefault()
         const id = props.match.params.id
         const data = EditCategoryInput;
-        axios.put(`/api/updateCategory/${id}`, data)
+        axios.put(`/api/update_category/${id}`, data)
             .then(res => {
                 if(res.data.status === 200){
                     swal('Success', res.data.message,'success')
