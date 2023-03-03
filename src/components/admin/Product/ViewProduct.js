@@ -73,6 +73,10 @@ function ViewProduct(){
                 </table>
             </div>
         </div>
+        <div>
+
+            <Link to="/admin/Garbage_prod" className="text-primary float-end">Show garbage</Link>
+        </div>
     </div>
     )
 }

@@ -1,8 +1,11 @@
 import Dashboard from '../components/admin/Dashboard'
 import Profile from '../components/admin/Profile'
+
 import AddCategory from '../components/admin/Category/AddCategory'
 import ViewCategory from '../components/admin/Category/ViewCategory'
 import EditCategory from '../components/admin/Category/EditCategory'
+import GarbageCategory from '../components/admin/Category/GarbageCategory'
+
 import ViewProduct from '../components/admin/Product/ViewProduct'
 import AddProduct from '../components/admin/Product/AddProduct'
 import EditProduct from '../components/admin/Product/EditProduct'
@@ -15,6 +18,7 @@ const routes = [
     { path: '/admin/Add_categories', exact: true, name: 'AddCategory', component: AddCategory},
     { path: '/admin/categories', exact: true, name: 'ViewCategory', component: ViewCategory},
     { path: '/admin/edit_category/:id', exact: true, name: 'EditCategory', component: EditCategory},
+    { path: '/admin/garbage_categories', exact: true, name: 'GarbageCategory', component: GarbageCategory},
 
     // product
     { path: '/admin/product', exact: true, name: 'ViewProdcut', component: ViewProduct},

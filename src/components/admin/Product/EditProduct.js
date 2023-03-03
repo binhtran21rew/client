@@ -21,12 +21,7 @@ const EditProduct = (props) => {
     const [picture, setPicture] = useState([])
     const [cateList, setCateList] = useState([])
     const [errors, setError] = useState([])
-    const [checkBox, setCheckBox] = useState([])
 
-    const handleChecked = (e) => {
-        e.persist()
-        setCheckBox({check: e.target.checked})
-    }
     // get item product from id to render
     useEffect(() => {
         // get api to render category to choose 
@@ -41,7 +36,6 @@ const EditProduct = (props) => {
             .then( res => {
                 if(res.data.status === 200){
                     setproductUpdate(res.data.product)
-                    setCheckBox(res.data.product)
                 }else if(res.data.status === 404) {
                     swal("Error", res.data.message, "error")
                     history.push('/admin/product')
@@ -67,7 +61,6 @@ const EditProduct = (props) => {
         data.append('name', productUpdate.name)
         data.append('slug', slug(productUpdate.name))
         data.append('description', productUpdate.description)
-        data.append('status', checkBox.check ? '1' : '0')
         data.append('seller_price', productUpdate.seller_price)
         data.append('origin_price', productUpdate.origin_price)
         data.append('brand', productUpdate.brand)
@@ -141,10 +134,6 @@ const EditProduct = (props) => {
                                     <input type="text" name="description" onChange={handleInput} value={productUpdate.description}  className="form-control"/>    
                                     <span className="text-danger">{errors.description}</span>
                                 </div>         
-                                <div className="form-group mb-3">
-                                    <label className=" mb-3">Status</label>
-                                    <input type="checkbox" name="status"  onChange={handleChecked} defaultChecked={checkBox.status === 1 ? true:false} />    
-                                </div>
                             </div>
                             <div className="tab-pane fade" id="detail" role="tabpanel" aria-labelledby="detail" tabIndex="0">
                                 <div className="row">

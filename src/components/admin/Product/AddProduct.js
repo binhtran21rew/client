@@ -13,7 +13,6 @@ function ViewProduct(){
         name:'',
         slug:'',
         description: '',
-        status: '',
         seller_price: '',
         origin_price:'',
         brand: '',
@@ -46,7 +45,6 @@ function ViewProduct(){
         data.append('name', productInput.name)
         data.append('slug', slug(productInput.name))
         data.append('description', productInput.description)
-        data.append('status', productInput.status)
         data.append('seller_price', productInput.seller_price)
         data.append('origin_price', productInput.origin_price)
         data.append('brand', productInput.brand)
@@ -64,7 +62,6 @@ function ViewProduct(){
                         name:'',
                         slug:'',
                         description: '',
-                        status: '',
                         seller_price: '',
                         origin_price:'',
                         brand: '',
@@ -124,10 +121,6 @@ function ViewProduct(){
                                         <input type="text" name="description" onChange={handleInput} value={productInput.description}  className="form-control"/>    
                                         <span className="text-danger">{errors.description}</span>
                                     </div>         
-                                    <div className="form-group mb-3">
-                                        <label className=" mb-3">Status</label>
-                                        <input type="checkbox" name="status"  onChange={handleInput} value={productInput.status} />    
-                                    </div>
                                 </div>
                                 <div className="tab-pane fade" id="detail" role="tabpanel" aria-labelledby="detail" tabIndex="0">
                                     <div className="row">
