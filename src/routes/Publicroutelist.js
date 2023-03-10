@@ -8,6 +8,7 @@ import Login from '../components/frondend/auth/Login';
 import ViewCategory from '../components/frondend/collections/ViewCategory';
 import ViewProduct from '../components/frondend/collections/ViewProduct';
 import ProductDetail from '../components/frondend/collections/ProducDetail';
+import Cart from '../components/frondend/Cart';
 
 const publicRoutesList = [
     { path: '/', exact: true, name: 'Home', component: Home},
@@ -20,5 +21,7 @@ const publicRoutesList = [
     { path: '/collections', exact: true, name: 'ViewCategory', component: ViewCategory},
     { path: '/collections/:slug', exact: true, name: 'ViewProduct', component: ViewProduct},
     { path: '/collections/:category/:product', exact: true, name: 'ProductDetail', component: ProductDetail},
+    { path: '/cart', exact: true, name: 'Cart', component: Cart},
+
 ];
 export default publicRoutesList;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 import { Link, useHistory } from "react-router-dom";
-
+import { imageAPI } from "../../../constant/Constant";
 
 function ProductDetail(props)
 {
@@ -101,7 +101,7 @@ function ProductDetail(props)
                                 <button type="button" onClick={handleIncrement} className="input-group-text">+</button>
                             </div>
                         </div>
-                        <div className="cod-md-3 mt-3">
+                        <div className="col-md-3 mt-3">
                             <button type="button" className="btn btn-primary w-100" onClick={submitAddtocart}>Add to Cart</button>
                         </div>
                 </div>
@@ -123,14 +123,13 @@ function ProductDetail(props)
                 <div className="container">
                     <h4>Collections / {product.category.name} / {product.name}</h4>
                 </div>
-
             </div> 
 
             <div className="py-3 ">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4 border-end">
-                            <img src={`http://localhost:8000/${product.image}`} alt={product.name} className="w-100" />
+                            <img src={`${imageAPI}${product.image}`} alt={product.name} className="w-100" />
                         </div>
                         <div className="col-md-8">
                             <h4>

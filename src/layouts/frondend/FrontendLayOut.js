@@ -1,16 +1,16 @@
 import React from 'react';
 import { Switch, Route} from 'react-router-dom';
 import Navbar from "../../layouts/frondend/Navbar";
+import '../../assets/client/css/style.css'
+import '../../assets/client/css/style.min.css'
 
 import publicRoutesList from '../../routes/Publicroutelist'
+
 const FrontendLayout = () => {
     return (
             <div className="sb-nav-fixed">
                 <Navbar />
-              
-
                     <div >
-                        
                             <Switch>
                                 {
                                     publicRoutesList.map((routedata, i) => {
@@ -31,12 +31,9 @@ const FrontendLayout = () => {
                                     }
                                 )}
                                 
-                            </Switch>
-                        
-                       
+                            </Switch>   
                     </div>     
-            </div>
-            
+            </div>     
     )
 };
 

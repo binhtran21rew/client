@@ -1,6 +1,7 @@
 import React, {useState, useEffect } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import Top from "../../../layouts/frondend/Top.js"
 
 
 function ViewCategory()
@@ -56,6 +57,8 @@ function ViewCategory()
     
     return (
         <div>
+            <Top  cate="category"/>
+
             <div className="py-3 bg-warning">
                 <div className="container">
                     <h6>Category Page</h6>

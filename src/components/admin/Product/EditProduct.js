@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import slug from '../../../utils/CreateSlug'
-
+import { imageAPI } from "../../../constant/Constant";
 import axios from "axios"
 import swal from "sweetalert"
 const EditProduct = (props) => {
@@ -67,7 +67,7 @@ const EditProduct = (props) => {
         data.append('color', productUpdate.color)
         data.append('quantity', productUpdate.quantity)
 
-        axios.put(`/api/update_product/${product_id}`,data)
+        axios.post(`/api/update_product/${product_id}`,data)
             .then(res => {
                 if(res.data.status === 200){
                     swal("success", res.data.message,'success')  
@@ -171,7 +171,7 @@ const EditProduct = (props) => {
                                     <div className="col-md-8 form-group mb-3">
                                         <label> Image</label>
                                         <input type="file" name="image" onChange={handleImageInput} className="form-control"/>
-                                        <img src={`http://localhost:8000/${productUpdate.image}`}/>
+                                        <img src={`${imageAPI}${productUpdate.image}`}/>
                                         <span className="text-danger">{errors.image}</span>
                                         
                                     </div>

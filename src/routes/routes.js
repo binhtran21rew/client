@@ -10,6 +10,14 @@ import ViewProduct from '../components/admin/Product/ViewProduct'
 import AddProduct from '../components/admin/Product/AddProduct'
 import EditProduct from '../components/admin/Product/EditProduct'
 
+
+import ViewSlider from '../components/admin/Slider/ViewSlider'
+import AddSlider from '../components/admin/Slider/AddSlider'
+import EditSlider from '../components/admin/Slider/EditSlider'
+
+
+
+
 const routes = [
     { path: '/admin', exact: true, name: 'Admin'},
     { path: '/admin/dashboard', exact: true, name: 'Dashboard', component: Dashboard},
@@ -24,6 +32,14 @@ const routes = [
     { path: '/admin/product', exact: true, name: 'ViewProdcut', component: ViewProduct},
     { path: '/admin/Add_product', exact: true, name: 'AddProduct', component: AddProduct},
     { path: '/admin/edit_product/:id', exact: true, name: 'EditProduct', component: EditProduct},
+
+    // slider
+    { path: '/admin/slider', exact: true, name: 'ViewSlider', component: ViewSlider},
+    { path: '/admin/add_slider', exact: true, name: 'AddSlider', component: AddSlider},
+    { path: '/admin/edit_slider/:id', exact: true, name: 'EditSlider', component: EditSlider},
+
+
+
 
 
 
